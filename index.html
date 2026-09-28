@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guess the Footballer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/players.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+
+  <body>
+    <main class="game">
+      <header>
+        <h1>⚽ Guess the Footballer</h1>
+        <p class="subtitle">A mystery player is on the pitch. You have 5 shots to find out who.</p>
+      </header>
+
+      <div class="controls">
+        <input
+          id="guess"
+          type="text"
+          list="player-list"
+          placeholder="Type a player's name..."
+          autocomplete="off"
+        />
+        <datalist id="player-list"></datalist>
+        <button id="shoot" disabled>Shoot</button>
+      </div>
+
+      <p id="message" class="message">Kick-off! Make your first guess.</p>
+      <p id="shots" class="shots"></p>
+
+      <div class="board">
+        <div class="row row--header">
+          <span>Player</span>
+          <span>League</span>
+          <span>Country</span>
+          <span>Age</span>
+          <span>Position</span>
+          <span>Shirt</span>
+        </div>
+        <div id="guesses"></div>
+      </div>
+
+      <div id="result" class="result hidden">
+        <h2 id="result-title"></h2>
+        <p id="result-text"></p>
+        <button id="restart">Play again</button>
+      </div>
+
+      <details class="legend">
+        <summary>How to play</summary>
+        <ul>
+          <li><span class="tile tile--correct">Green</span> the attribute matches the mystery player.</li>
+          <li><span class="tile tile--close">Yellow</span> age or shirt number is within 2.</li>
+          <li><span class="tile tile--wrong">Grey</span> not a match.</li>
+          <li>↑ / ↓ means the mystery player's number is higher / lower.</li>
+        </ul>
+      </details>
+    </main>
+  </body>
+</html>
